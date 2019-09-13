@@ -1,0 +1,17 @@
+body {
+    margin: 0 auto;
+}
+
+.replace {
+    text-decoration-line: line-through;
+}
+
+.header {
+    background-color: gray;
+}
+
+.heading {
+    color: #FFF;
+    background-color: gray;
+    float: right;
+}
