@@ -5,6 +5,7 @@ $(document).ready(function() {
   setInterval(function() {
     $('.current-time').html(moment().format('hh:mm:ss A'))
   }, 1000)
+  
 
   ;(function() {
     // instantiate a moment object
@@ -17,6 +18,7 @@ $(document).ready(function() {
     // var DisplayMoment = document.getElementById('#displayMoment')
     // DisplayMoment.innerHTML = NowMoment
     // $("#displayMoment").text(nowMoment);
+    
 
     //display value of Date object in #displayJsDate div
     // var DisplayDate = document.getElementById('#displayJsDate')
@@ -28,26 +30,17 @@ $(document).ready(function() {
     $('.current').text(`The time is ${now}`)
   })()
 
-// should put in a function
-function newTrain () {
-  let train = {
-    name: this.name,
-    destination: ["Florida", "Alabama", "Pennsylvania"],
-    arrival: this.arrival,
-    onTime: true
-  }
-}
-  train = newTrain("bob", "california", 10, true)
 
-
-
-$(".t-1a").text(newTrain.destination)
-$(".t-1d").text(newTrain.arrival)
-$("#add").on('click', function(){
-  console.log(first.name)
-  console.log(train-name.input)
-  $(".t1-a").text(`The train's name is ${newTrain.name}`)
-})
+// display information on page
+ // pull from modal train-name div
+ $("#add").on('click', function () {
+   var returnName = $("#exampleModal #train-name").val().trim()
+   var returnDest = $("#exampleModal #train-destination").val().trim()
+   var returnFreq = $("#exampleModal #train-frequency").val().trim()
+   console.log(returnName)
+   console.log(returnDest)
+   console.log(returnFreq)
+ })
 
 })
 
@@ -64,13 +57,14 @@ We'll leave that up to you -- however you like. Just make sure you're using Loca
   * When adding trains, administrators should be able to submit the following:
     
     * Train Name
-    
+   
+
     * Destination 
-    
+    // from modal
     * First Train Time -- in military time
-    
+    // ?
     * Frequency -- in minutes
-  
+  // from modal
   * Code this app to calculate when the next train will arrive; this should be relative to the current time.
   
   * Users from many different machines must be able to view same train times.
