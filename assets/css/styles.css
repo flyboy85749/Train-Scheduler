@@ -16,6 +16,14 @@ body {
     float: right;
 }
 
+.current-time {
+    font-weight: 900;
+}
+
+button {
+    margin: 20px;
+}
+
 .modal
  {
      position: absolute;
