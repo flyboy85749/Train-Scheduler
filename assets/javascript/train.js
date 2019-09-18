@@ -14,20 +14,44 @@ $(document).ready(function() {
     var NowDate = new Date()
 
     // display value of moment object in #displayMoment div
-    var eDisplayMoment = document.getElementById('displayMoment')
-    eDisplayMoment.innerHTML = NowMoment
+    // var DisplayMoment = document.getElementById('#displayMoment')
+    // DisplayMoment.innerHTML = NowMoment
     // $("#displayMoment").text(nowMoment);
 
     //display value of Date object in #displayJsDate div
-    var eDisplayDate = document.getElementById('displayJsDate')
-    eDisplayDate.innerHTML = NowDate
+    // var DisplayDate = document.getElementById('#displayJsDate')
+    // DisplayDate.innerHTML = NowDate
     // $("#displayJsDate").text(NowDate);
 
     $('.current').text(moment())
     let now = moment()
     $('.current').text(`The time is ${now}`)
   })()
+
+// should put in a function
+function newTrain () {
+  let train = {
+    name: this.name,
+    destination: ["Florida", "Alabama", "Pennsylvania"],
+    arrival: this.arrival,
+    onTime: true
+  }
+}
+  train = newTrain("bob", "california", 10, true)
+
+
+
+$(".t-1a").text(newTrain.destination)
+$(".t-1d").text(newTrain.arrival)
+$("#add").on('click', function(){
+  console.log(first.name)
+  console.log(train-name.input)
+  $(".t1-a").text(`The train's name is ${newTrain.name}`)
 })
+
+})
+
+
 /* In this assignment, you'll create a train schedule application that incorporates Local Storage to host arrival and departure data. Your app will retrieve and manipulate this information with Moment.js. This website will provide up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
 
  Setup

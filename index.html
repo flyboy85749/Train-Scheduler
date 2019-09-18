@@ -34,10 +34,44 @@
       </div>
       <!-- put this in a modal -->
       <div class="col-5">
-        <button>Add a Train</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+          data-whatever="@mdo">Add a Train</button>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New Train</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="train-name" class="col-form-label">Name:</label>
+                  <input type="text" class="form-control" id="train-name">
+                </div>
+                <div class="form-group">
+                  <label for="train-destination" class="col-form-label">Destination:</label>
+                  <input type="text" class="form-control" id="train-destination">
+                </div>
+                <div class="form-group">
+                  <label for="train-frequency" class="col-form-label">Frequency:</label>
+                  <input type="text" class="form-control" id="train-frequency">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" id="add" class="btn btn-primary">Add Train</button>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- <form>
+      <!-- <form>
           <p>Train Name</p>
           <input type="text" id="name" name="train-name" value=""/>
           <p>Destination</p>
@@ -46,7 +80,7 @@
           <input type="text" id="frequency" name="train-frequency" value=""/>
 
         </form>
-      </div> --> 
+      </div> -->
     </div>
     <div class="row">
       <div class="col-5">
@@ -106,7 +140,7 @@
     <div class="row">
       <div class="col-5">
         <h4>Train in Vain</h4>
-        
+
       </div>
       <div class="col-3">
         <p>Destination</p>
@@ -157,9 +191,9 @@
     </div>
     <div class="row">
       <div class="col-5">
-      <h4>Train Ride Home</h4>
-    </div>
-    <div class="col-3">
+        <h4>Train Ride Home</h4>
+      </div>
+      <div class="col-3">
         <p>Destination</p>
         <p class="t-7a"></p>
       </div>
@@ -174,9 +208,9 @@
     </div>
     <div class="row">
       <div class="col-5">
-      <h4>TrainWreck</h4>
-    </div>
-    <div class="col-3">
+        <h4>TrainWreck</h4>
+      </div>
+      <div class="col-3">
         <p>Destination</p>
         <p class="t-8a"></p>
       </div>
@@ -191,9 +225,9 @@
     </div>
     <div class="row">
       <div class="col-5">
-      <h4>Night Train</h4>
-    </div>
-     <div class="col-3">
+        <h4>Night Train</h4>
+      </div>
+      <div class="col-3">
         <p>Destination</p>
         <p class="t-9a"></p>
       </div>
@@ -205,12 +239,12 @@
         <p>On Time</p>
         <p class="t-9ot"></p>
       </div>
-  </div>
+    </div>
     <div class="row">
       <div class="col-5">
-      <h4>Love Train</h4>
-    </div>
-    <div class="col-3">
+        <h4>Love Train</h4>
+      </div>
+      <div class="col-3">
         <p>Destination</p>
         <p class="t-10a"></p>
       </div>
@@ -227,16 +261,16 @@
       <p><i class="fa fa-copyright" aria-hidden="true">Copyright &copy; William H. Hall III</i></p>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="node_modules/moment/moment.js">
-    moment();
-  </script>
-  <script src="assets/JavaScript/train.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="node_modules/moment/moment.js">
+      moment();
+    </script>
+    <script src="assets/JavaScript/train.js"></script>
 </body>
 
 </html>

@@ -24,7 +24,11 @@ button {
     margin: 20px;
 }
 
-.modal
+.t-1a {
+    color: orange;
+}
+
+#modal
  {
      position: absolute;
      z-index: 1000;
