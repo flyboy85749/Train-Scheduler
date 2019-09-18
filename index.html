@@ -28,12 +28,12 @@
       <div class="col-5">
         <h1>Train Schedule Finder</h1>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <h5>Current Time:</h5>
         <p class="current-time"></p>
       </div>
-      <!-- put this in a modal -->
-      <div class="col-5">
+      <!-- add train modal -->
+      <div class="col-2">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
           data-whatever="@mdo">Add a Train</button>
       </div>
@@ -70,6 +70,44 @@
           </div>
         </div>
       </div>
+      <!-- update modal here -->
+      <div class="col-2">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModal"
+          data-whatever="@mdo">Update Train</button>
+      </div>
+      <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateModalLabel">Update Existing Train</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="train-name" class="col-form-label">Name:</label>
+                  <input type="text" class="form-control" id="update-name">
+                </div>
+                <div class="form-group">
+                  <label for="train-destination" class="col-form-label">Destination:</label>
+                  <input type="text" class="form-control" id="update-destination">
+                </div>
+                <div class="form-group">
+                  <label for="train-frequency" class="col-form-label">Frequency:</label>
+                  <input type="text" class="form-control" id="update-frequency">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" id="update" class="btn btn-primary">Update Train Info</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- <form>
           <p>Train Name</p>
@@ -88,15 +126,15 @@
       </div>
       <div class="col-3">
         <p>Destination</p>
-        <p class="t-1a"></p>
+        <p class="t-1d"></p>
       </div>
       <div class="col-3">
         <p>Arrival Time</p>
-        <p class="t-1d"></p>
+        <p class="t-1a"></p>
       </div>
       <div class="col-1">
         <p>On Time</p>
-        <p class="t-1ot"></p>
+        <p class="t-1d"></p>
       </div>
 
     </div>
