@@ -16,6 +16,12 @@ body {
     float: right;
 }
 
+.modal
+ {
+     position: absolute;
+     z-index: 1000;
+ }
+
 .footer {
     background-color: gray;
 }
