@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script> 
   <!-- <script type="text/javascript" src="node_modules/moment/moment.js"> -->
-    moment();
-  </script>
+    <!-- moment();
+  </script> -->
 </head>
 
 <body>
@@ -90,6 +90,10 @@
             </div>
             <div class="modal-body">
               <form>
+                  <div class="form-group">
+                      <label for="train-name" class="col-form-label">Name:</label>
+                      <input type="text" class="form-control" id="update-name">
+                    </div>
                 
                 <div class="form-group">
                   <label for="train-destination" class="col-form-label">Destination:</label>
@@ -124,23 +128,24 @@
         </form>
       </div> -->
     </div>
+
     <div class="row">
       <div class="col-5">
-        <h4>Crazy Train</h4>
+        <h4 class="added-name"></h4>
+        <h4 class="ct">Crazy Train</h4>
       </div>
       <div class="col-3">
         <p>Destination</p>
-        <p class="t-1d"></p>
+        <p class="added-destination"></p>
       </div>
       <div class="col-3">
         <p>Arrival Time</p>
-        <p class="t-1a"></p>
+        <p class="added-arrival"></p>
       </div>
       <div class="col-1">
         <p>On Time</p>
-        <p class="t-1d"></p>
+        <p class="added-ontime"></p>
       </div>
-
     </div>
     <div class="row">
       <div class="col-5">
@@ -352,15 +357,16 @@
         .val()
         .trim()
 
-      console.log(returnName)
-      console.log(returnDest)
-      console.log(returnFreq)
+      $(".added-name").text(returnName)
+      $(".added-destination").text(returnDest)
+      $(".added-frequency").text(returnFreq)
     })
   }
   addTrain()
 
   function updateTrain() {
     $('#update').on('click', function() {
+      
       var updateDest = $('#updateModal #update-destination')
         .val()
         .trim()
@@ -371,7 +377,8 @@
         .val()
         .trim()
 
-      console.log(updateDest)
+      
+      $(".crazy").text(updateDest)
       console.log(updateFreq)
       console.log(updateOnTime)
     })
