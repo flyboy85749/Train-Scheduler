@@ -30,17 +30,38 @@ $(document).ready(function() {
     $('.current').text(`The time is ${now}`)
   })()
 
+ function addTrain () {
+  $("#add").on('click', function () {
+    var returnName = $("#exampleModal #train-name").val().trim()
+    var returnDest = $("#exampleModal #train-destination").val().trim()
+    var returnFreq = $("#exampleModal #train-frequency").val().trim()
+    console.log(returnName)
+    console.log(returnDest)
+    console.log(returnFreq)
+  })
+  
+ }
+addTrain()
+
+ function updateTrain () {
+  $("#update").on('click', function () {
+    
+    var updateDest = $("#updateModal #update-destination").val().trim()
+    
+    var updateFreq = $("#updateModal #update-frequency").val().trim()
+    var updateOnTime = $("#updateModal #update-time").val().trim()
+    
+    console.log(updateDest)
+    console.log(updateFreq)
+    console.log(updateOnTime)
+  })
+
+ }
+ updateTrain()
 
 // display information on page
  // pull from modal train-name div
- $("#add").on('click', function () {
-   var returnName = $("#exampleModal #train-name").val().trim()
-   var returnDest = $("#exampleModal #train-destination").val().trim()
-   var returnFreq = $("#exampleModal #train-frequency").val().trim()
-   console.log(returnName)
-   console.log(returnDest)
-   console.log(returnFreq)
- })
+ 
 
 })
 
