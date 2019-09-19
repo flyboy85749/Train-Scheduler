@@ -5,8 +5,6 @@ $(document).ready(function() {
   setInterval(function() {
     $('.current-time').html(moment().format('hh:mm:ss A'))
   }, 1000)
-  
-
   ;(function() {
     // instantiate a moment object
     var NowMoment = moment()
@@ -18,7 +16,6 @@ $(document).ready(function() {
     // var DisplayMoment = document.getElementById('#displayMoment')
     // DisplayMoment.innerHTML = NowMoment
     // $("#displayMoment").text(nowMoment);
-    
 
     //display value of Date object in #displayJsDate div
     // var DisplayDate = document.getElementById('#displayJsDate')
@@ -30,41 +27,47 @@ $(document).ready(function() {
     $('.current').text(`The time is ${now}`)
   })()
 
- function addTrain () {
-  $("#add").on('click', function () {
-    var returnName = $("#exampleModal #train-name").val().trim()
-    var returnDest = $("#exampleModal #train-destination").val().trim()
-    var returnFreq = $("#exampleModal #train-frequency").val().trim()
-    console.log(returnName)
-    console.log(returnDest)
-    console.log(returnFreq)
-  })
-  
- }
-addTrain()
+  function addTrain() {
+    $('#add').on('click', function() {
+      var returnName = $('#exampleModal #train-name')
+        .val()
+        .trim()
+      var returnDest = $('#exampleModal #train-destination')
+        .val()
+        .trim()
+      var returnFreq = $('#exampleModal #train-frequency')
+        .val()
+        .trim()
 
- function updateTrain () {
-  $("#update").on('click', function () {
-    
-    var updateDest = $("#updateModal #update-destination").val().trim()
-    
-    var updateFreq = $("#updateModal #update-frequency").val().trim()
-    var updateOnTime = $("#updateModal #update-time").val().trim()
-    
-    console.log(updateDest)
-    console.log(updateFreq)
-    console.log(updateOnTime)
-  })
+      console.log(returnName)
+      console.log(returnDest)
+      console.log(returnFreq)
+    })
+  }
+  addTrain()
 
- }
- updateTrain()
+  function updateTrain() {
+    $('#update').on('click', function() {
+      var updateDest = $('#updateModal #update-destination')
+        .val()
+        .trim()
+      var updateFreq = $('#updateModal #update-frequency')
+        .val()
+        .trim()
+      var updateOnTime = $('#updateModal #update-time')
+        .val()
+        .trim()
 
-// display information on page
- // pull from modal train-name div
- 
+      console.log(updateDest)
+      console.log(updateFreq)
+      console.log(updateOnTime)
+    })
+  }
+  updateTrain()
 
+  // display information on page
+  // pull from modal train-name div
 })
-
 
 /* In this assignment, you'll create a train schedule application that incorporates Local Storage to host arrival and departure data. Your app will retrieve and manipulate this information with Moment.js. This website will provide up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
 
