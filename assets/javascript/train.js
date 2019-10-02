@@ -1,120 +1,117 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // document is loaded and DOM is ready
   // alert('document is ready')
 
-  setInterval(function() {
+  setInterval(function () {
     $('.current-time').html(moment().format('hh:mm:ss A'))
   }, 1000)
-  ;(function() {
-    // instantiate a moment object
-    var NowMoment = moment()
+    ; (function () {
+      // instantiate a moment object
+      let NowMoment = moment()
 
-    // instantiate a JavaScript Date object
-    var NowDate = new Date()
+      // instantiate a JavaScript Date object
+      let NowDate = new Date()
 
-    // display value of moment object in #displayMoment div
-    // var DisplayMoment = document.getElementById('#displayMoment')
-    // DisplayMoment.innerHTML = NowMoment
-    // $("#displayMoment").text(nowMoment);
+      // display value of moment object in #displayMoment div
+      // let DisplayMoment = document.getElementById('#displayMoment')
+      // DisplayMoment.innerHTML = NowMoment
+      // $("#displayMoment").text(nowMoment);
 
-    //display value of Date object in #displayJsDate div
-    // var DisplayDate = document.getElementById('#displayJsDate')
-    // DisplayDate.innerHTML = NowDate
-    // $("#displayJsDate").text(NowDate);
+      //display value of Date object in #displayJsDate div
+      // let DisplayDate = document.getElementById('#displayJsDate')
+      // DisplayDate.innerHTML = NowDate
+      // $("#displayJsDate").text(NowDate);
 
-    $('.current').text(moment())
-    let now = moment()
-    $('.current').text(`The time is ${now}`)
-  })()
+      $('.current').text(moment())
+      let now = moment()
+      $('.current').text(`The time is ${now}`)
+    })()
+
+  const trains = ["Crazy Train", "Midnight Train to Georgia", "Long Black Train", "Train in Vain", "Runaway Train", "Train Kept a Rollin'", "Train Ride Home", "TrainWreck", "Night Train", "Love Train"]
 
   function addTrain() {
-    $('#add').on('click', function() {
-      var returnName = $('#exampleModal #train-name')
+    $('#add').on('click', function () {
+      let returnName = $('#train-name')
         .val()
         .trim()
-      var returnDest = $('#exampleModal #train-destination')
+      let returnDest = $("#train-destination")
         .val()
         .trim()
-      var returnFreq = $('#exampleModal #train-frequency')
+      let returnFreq = $('#train-arrival')
+        .val()
+        .trim()
+      let returnOnTime = $('#train-onTime')
         .val()
         .trim()
 
       console.log(returnName)
       console.log(returnDest)
       console.log(returnFreq)
+      console.log(returnOnTime)
     })
   }
   addTrain()
 
   function updateTrain() {
-    $('#update').on('click', function() {
-      var updateDest = $('#updateModal #update-destination')
+    $('#update').on('click', function () {
+
+      let updateDest = $('#update-destination')
         .val()
         .trim()
-      var updateFreq = $('#updateModal #update-frequency')
+      let updateFreq = $('#update-arrival')
         .val()
         .trim()
-      var updateOnTime = $('#updateModal #update-time')
+      let updateOnTime = $('#update-onTime')
         .val()
         .trim()
+
 
       console.log(updateDest)
       console.log(updateFreq)
       console.log(updateOnTime)
     })
   }
-  updateTrain()
+  updateTrain();
 
-  // display information on page
-  // pull from modal train-name div
-})
+});
 
-/* In this assignment, you'll create a train schedule application that incorporates Local Storage to host arrival and departure data. Your app will retrieve and manipulate this information with Moment.js. This website will provide up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
+// set up our train information
+const trains = [
+  {Name: "Crazy Train", Destination: "Phoenix", Arrival: "", Delay: true},
+  {Name: "Midnight Train to Georgia", Destination: "Tucson", Arrival: "", Delay: true},
+  {Name: "Long Black Train", Destination: "Trenton", Arrival: "", Delay: false},
+  {Name: "Train in Vain", Destination: "Portland", Arrival: "", Delay: true},
+  {Name: "Runaway Train", Destination: "Seattle", Arrival: "", Delay: false},
+  {Name: "Train Kept a Rollin'", Destination: "St. Louis", Arrival: "", Delay: true},
+  {Name: "Train Ride Home", Destination: "New York", Arrival: "", Delay: true},
+  {Name: "TrainWreck", Destination: "Philadelphia", Arrival: "", Delay: true},
+  {Name: "Night Train", Destination: "Sacremento", Arrival: "", Delay: false},
+  {Name: "Love Train", Destination: "Dallas", Arrival: "", Delay: true}
+]
 
- Setup
-We'll leave that up to you -- however you like. Just make sure you're using Local Storage to store data, GitHub to backup your project, and GitHub Pages to host your finished site.
+// then generate a table to display the info
+function generateTableHead(table, data) {
+  let thead = table.createTHead();
+  let row = thead.insertRow();
+  for (let key of data) {
+    let th = document.createElement("th");
+    let text = document.createTextNode(key);
+    th.appendChild(text);
+    row.appendChild(th);
+  }
+}
+let table = document.querySelector("table");
+let data = Object.keys(trains[0]);
+generateTableHead(table, data);
 
-### Instructions
-
-* Make sure that your app suits this basic spec:
-  
-  * When adding trains, administrators should be able to submit the following:
-    
-    * Train Name
-   
-
-    * Destination 
-    // from modal
-    * First Train Time -- in military time
-    // ?
-    * Frequency -- in minutes
-  // from modal
-  * Code this app to calculate when the next train will arrive; this should be relative to the current time.
-  
-  * Users from many different machines must be able to view same train times.
-  
-  * Styling and theme are completely up to you. Get Creative! 
-  
-  ### Bonus (Extra Challenges)
-
-* Consider updating your "minutes to arrival" and "next train time" text once every minute. This is significantly more challenging; only attempt this if you've completed the actual activity and committed it somewhere on GitHub for safekeeping (and maybe create a second GitHub repo).
-
-* Try adding `update` and `remove` buttons for each train. Let the user edit the row's elements-- allow them to change a train's Name, Destination and Arrival Time (and then, by relation, minutes to arrival).
-*/
-
-// if (Modernizr.localstorage) {
-
-//   var txtname = document.getElementById('username'); // Get form elements
-//   var txtAnswer = document.getElementById('answer');
-
-//   txtUsername.value = localStorage.getItem('username');  // Elements populated
-//   txtAnswer.value = localStorage.getItem('answer');      // by localStorage data
-
-//   txtUsername.addEventListener('input', function () {    // Data saved on keyup
-//     localStorage.setItem('username', txtUsername.value);
-//   }, false);
-
-//   txtAnswer.addEventListener('input', function () {      // Data saved on keyup
-//     localStorage.setItem('answer', txtAnswer.value);
-//   }, false);
-// }
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+      cell.appendChild(text);
+    }
+  }
+}
+generateTable(table, trains);
