@@ -1,4 +1,7 @@
-// const station = (x1=0, y1=0)
+// station location is (0,0)
+const station = (x1=0, y1=0)
+
+// create new trains
 class train {
     constructor(name, destination, arrival, onTime) {
             this.name = name,
